@@ -2,13 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <title>Cosmic Logic CET</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN (Development/Prototyping Mode) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            fontFamily: {
+              sans: ['Outfit', 'sans-serif'],
+            },
             colors: {
               cosmic: {
                 900: '#0B0B15',
@@ -23,6 +33,7 @@
             animation: {
               'twinkle': 'twinkle 3s ease-in-out infinite',
               'float': 'float 6s ease-in-out infinite',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
             },
             keyframes: {
               twinkle: {
@@ -32,14 +43,45 @@
               float: {
                 '0%, 100%': { transform: 'translateY(0)' },
                 '50%': { transform: 'translateY(-10px)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: 0, transform: 'translateY(20px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
               }
             }
           }
         }
       }
     </script>
+    
+    <style>
+      :root {
+        --safe-top: env(safe-area-inset-top);
+        --safe-bottom: env(safe-area-inset-bottom);
+      }
+      
+      html, body {
+        height: 100%;
+        overflow-x: hidden;
+        overscroll-behavior-y: none; /* Prevents pull-to-refresh rubber banding */
+        background-color: #0B0B15;
+      }
+
+      body {
+        padding-top: var(--safe-top);
+        padding-bottom: var(--safe-bottom);
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      #root {
+        min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+
     <meta name="theme-color" content="#0B0B15" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <script type="importmap">
 {
@@ -54,7 +96,8 @@
 }
 </script>
 </head>
-  <body class="bg-cosmic-900 text-slate-200 overflow-x-hidden">
+  <body class="bg-cosmic-900 text-slate-200 antialiased">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

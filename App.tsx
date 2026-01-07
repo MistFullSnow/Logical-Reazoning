@@ -169,7 +169,7 @@ const App: React.FC = () => {
   // --- Renderers ---
 
   const renderLogin = () => (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 animate-fade-in-up">
+    <div className="flex flex-col items-center justify-center min-h-[100dvh] p-6 animate-fade-in-up">
       <Card className="w-full max-w-md border-t-4 border-t-cosmic-glow">
         <h1 className="text-3xl font-black text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
           IDENTIFY YOURSELF
@@ -195,7 +195,7 @@ const App: React.FC = () => {
   );
 
   const renderHome = () => (
-    <div className="flex flex-col items-center justify-center min-h-[80vh] gap-8 p-4 text-center">
+    <div className="flex flex-col items-center justify-center min-h-[80dvh] gap-8 p-4 text-center">
       <div className="relative">
         <div className="absolute -inset-4 bg-cosmic-glow rounded-full blur-xl opacity-30 animate-pulse"></div>
         <h1 className="relative text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-sm tracking-tight">
@@ -224,7 +224,7 @@ const App: React.FC = () => {
   );
 
   const renderModeSelect = () => (
-    <div className="flex flex-col items-center gap-8 p-4 min-h-[80vh] justify-center">
+    <div className="flex flex-col items-center gap-8 p-4 min-h-[80dvh] justify-center">
       <h2 className="text-3xl font-bold text-white mb-4">Select Protocol</h2>
       
       <div className="grid md:grid-cols-2 gap-6 w-full max-w-2xl">
@@ -308,7 +308,7 @@ const App: React.FC = () => {
   };
 
   const renderQuiz = () => (
-    <div className="flex flex-col items-center w-full min-h-screen">
+    <div className="flex flex-col items-center w-full min-h-[100dvh]">
       {/* Sticky Header */}
       <div className="sticky top-0 z-50 w-full bg-cosmic-900/90 backdrop-blur-md border-b border-white/5 shadow-2xl">
         <div className="max-w-2xl mx-auto p-4 flex justify-between items-center">
@@ -406,7 +406,7 @@ const App: React.FC = () => {
     const percentage = (score / QUIZ_LENGTH) * 100;
     
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen p-6 animate-fade-in-up">
+      <div className="flex flex-col items-center justify-center min-h-[100dvh] p-6 animate-fade-in-up">
         <Card className="w-full max-w-md text-center border-t-4 border-t-yellow-400">
           <h2 className="text-2xl font-bold text-white mb-2">MISSION DEBRIEF</h2>
           <p className="text-slate-400 mb-6">{selectedTopic?.name}</p>
@@ -440,7 +440,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen text-slate-200 font-sans selection:bg-cosmic-accent selection:text-white">
+    <div className="relative min-h-[100dvh] text-slate-200 font-sans selection:bg-cosmic-accent selection:text-white">
       <StarBackground />
       <div className="relative z-10">
         {screen === Screen.LOGIN && renderLogin()}
