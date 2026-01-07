@@ -1,7 +1,7 @@
 import { Mode, TopicDef } from './types';
 
 export const APP_NAME = "COSMIC LOGIC CET";
-export const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbybiIeuH0EcBpSL31HdlGAQoVeW4nye3UXRXBVL1zUFJnZs_UsZAI3Nb4MLRsrzk2kj/exec";
+export const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzRd2JBenfU9daDAEnAVtACubi_J2NXnZUK8bTFVjJcviQSUTeVQ99xKXK4gzT4qUk/exec";
 
 export const SYLLABUS: TopicDef[] = [
   // Handy Mode Topics (Mental/Quick)
